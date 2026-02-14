@@ -1,65 +1,115 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+export default function LandingPage() {
+  const [clickCount, setClickCount] = useState(0);
+  const maxClicks = 5;
+
+  const noButtonSize = Math.max(100 - clickCount * 15, 0);
+  const yesButtonSize = 100 + clickCount * 15;
+
+  const router = useRouter();
+
+  const handleNoClick = () => {
+    if (clickCount < maxClicks) setClickCount(clickCount + 1);
+  };
+
+  const handleYesClick = () => {
+    router.push('/hvd');
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-pink-300 via-red-200 to-pink-100 p-6 overflow-hidden">
+
+    {/* headline */}
+    <h1 className="relative z-10 text-4xl sm:text-6xl md:text-7xl font-extrabold mb-8 text-pink-800 text-center drop-shadow-xl">
+      Aishu, will you be my valentine?
+    </h1>
+
+    {/* buttons */}
+    <div className="relative flex flex-col sm:flex-row gap-4 sm:gap-6 z-10">
+      <button
+        onClick={handleYesClick}
+        style={{
+          width: `${yesButtonSize}px`,
+          height: `${yesButtonSize / 2}px`,
+        }}
+        className="bg-green-700 hover:bg-green-700 text-white font-bold rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+      >
+        YESS
+      </button>
+
+      {clickCount < maxClicks && (
+        <div className="flex justify-center">
+          <button
+            onClick={handleNoClick}
+            style={{
+              width: `${noButtonSize}px`,
+              height: `${noButtonSize / 2}px`,
+            }}
+            className="bg-red-800 text-white font-bold rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            no
+          </button>
         </div>
-      </main>
+      )}
     </div>
+
+    {clickCount >= maxClicks && (
+      <p className="mt-6 text-xl sm:text-xl text-pink-700 font-semibold relative z-10 text-center">
+        SYSTEM ERROR: DUE TO ISSUES WITH YOUR INTERNET CONNECTION, ONLY ONE BUTTON REMAINS (I guess you have to click it now)
+      </p>
+    )}
+    {clickCount == 1 && (
+      <p className="mt-6 text-2xl sm:text-xl text-pink-700 font-semibold relative z-10 text-center">
+        oops, you accidentally misclicked. Please try again!
+        <div className="flex justify-center items-center">
+          <img
+            src="/stickers/cat grinning.webp"
+            alt="Animated Valentine Sticker"
+            className="w-36 h-36"
+          />
+        </div>
+      </p>
+    )}
+    {clickCount == 2 && (
+      <p className="mt-6 text-2xl sm:text-xl text-pink-700 font-semibold relative z-10 text-center">
+        aishu, please try again :(
+        <div className="flex justify-center items-center">
+          <img
+            src="/stickers/sad cat heart.webp"
+            alt="Sad Cat Sticker"
+            className="w-36 h-36"
+          />
+        </div>
+      </p>
+    )}
+    {clickCount == 3 && (
+      <p className="mt-6 text-2xl sm:text-xl text-pink-700 font-semibold relative z-10 text-center">
+        AISHU STOP TRYNA RAGEBAIT ME!
+        <div className="flex justify-center items-center">
+          <img
+            src="/stickers/argh.webp"
+            alt="Argh Sticker"
+            className="w-36 h-36"
+          />
+        </div>
+      </p>
+    )}
+    {clickCount == 4 && (
+      <p className="mt-6 text-2xl sm:text-xl text-pink-700 font-semibold relative z-10 text-center">
+        babyyyy, pleaseeee... I'm begging youuu
+        <div className="flex justify-center items-center">
+          <img
+            src="/stickers/sad aishu.webp"
+            alt="Sad Aishu Sticker"
+            className="w-36 h-36"
+          />
+        </div>
+      </p>
+    )}
+  </div>
   );
 }
