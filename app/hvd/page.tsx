@@ -47,7 +47,7 @@ export default function HvdPage() {
         </div>
 
         {/* CENTER */}
-        <div className="flex flex-1 flex-col items-center justify-center text-center gap-2 sm:gap-3 mt-4 sm:mt-6">
+        <div className="flex flex-col items-center text-center gap-2 sm:gap-3 mt-4 sm:mt-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-pink-800">
             HAPPY VALENTINE&apos;S DAY,
           </h2>
@@ -70,7 +70,7 @@ export default function HvdPage() {
         </div>
 
         {/* BOTTOM */}
-        <div className="flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-8 fixed bottom-10">
+        <div className="fixed bottom-10 left-0 right-0 flex justify-center z-20">
           <button
             className="
               px-8 py-3 sm:py-4 rounded-full
@@ -91,7 +91,6 @@ export default function HvdPage() {
             CLAIM YOUR VALENTINE&apos;S GIFTS 🎁
           </button>
         </div>
-
       </div>
     </main>
   );
