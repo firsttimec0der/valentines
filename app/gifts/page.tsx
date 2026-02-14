@@ -34,7 +34,7 @@ export default function GiftsPage() {
                 rounded-2xl
                 shadow-xl
                 flex flex-col items-center justify-center
-                h-44 sm:h-48
+                h-40 sm:h-48
                 text-5xl
                 transition
                 hover:scale-105

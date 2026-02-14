@@ -55,7 +55,7 @@ export default function FutureVouchersPage() {
           <div
             key={index}
             onClick={() => handleFlip(index)}
-            className="relative h-36 cursor-pointer perspective"
+            className="relative h-30 cursor-pointer perspective"
             >
             <div
                 className={`relative w-full h-full duration-500 ${

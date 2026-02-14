@@ -70,7 +70,7 @@ export default function HvdPage() {
         </div>
 
         {/* BOTTOM */}
-        <div className="flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-8">
+        <div className="flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-8 fixed bottom-10">
           <button
             className="
               px-8 py-3 sm:py-4 rounded-full
