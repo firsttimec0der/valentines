@@ -105,7 +105,7 @@ export default function FutureVouchersPage() {
       </div>
 
       {/* Back Button */}
-      <div className="flex justify-center mt-12">
+      <div className="fixed bottom-15 left-0 right-0 flex justify-center z-20">
         <button
           onClick={() => router.push('/gifts')}
           className="

@@ -12,45 +12,50 @@ export default function GiftsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-300 via-red-200 to-pink-100 flex flex-col items-center px-4 py-12">
-      <div className='flex flex-1 flex-col items-center justify-center text-center gap-2'>  
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-pink-700 mb-10 text-center">
-            Aishu's Valentine's Gifts
+    <main className="min-h-screen bg-gradient-to-b from-pink-300 via-red-200 to-pink-100 flex flex-col items-center px-4 py-8">
+      
+      {/* Content container */}
+      <div className='flex flex-1 flex-col items-center justify-start text-center gap-6 w-full max-w-5xl'>
+        
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-pink-700 mb-6 text-center">
+          Aishu's Valentine's Gifts
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-4xl">
-            {gifts.map((gift) => (
+        {/* Gifts grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+          {gifts.map((gift) => (
             <div
-                key={gift.name}
-                onClick={() => router.push(`/gifts/${gift.name}`)}
-                className="
+              key={gift.name}
+              onClick={() => router.push(`/gifts/${gift.name}`)}
+              className="
                 cursor-pointer
                 bg-white/20 backdrop-blur-lg border border-white/30
                 rounded-2xl
                 shadow-xl
                 flex flex-col items-center justify-center
-                h-48
+                h-44 sm:h-48
                 text-5xl
                 transition
                 hover:scale-105
                 active:scale-95
                 hover:shadow-2xl
-                "
+              "
             >
-                🎁
-                <p className="text-lg mt-4 text-pink-600 font-semibold">
+              🎁
+              <p className="text-lg mt-4 text-pink-600 font-semibold">
                 Gift {gift.no}
-                </p>
-                <p className="text-lg mt-2 ml-4 mr-4 text-pink-600 font-semibold">
+              </p>
+              <p className="text-sm sm:text-lg mt-2 mx-4 text-pink-600 font-semibold">
                 Tap to reveal...
-                </p>
+              </p>
             </div>
-            ))}
+          ))}
         </div>
       </div>
 
       {/* Back Button */}
-      <div className="flex justify-center mt-12">
+      <div className="fixed bottom-15 left-0 right-0 flex justify-center z-20">
         <button
           onClick={() => router.push('/hvd')}
           className="

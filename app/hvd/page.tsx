@@ -23,7 +23,7 @@ export default function HvdPage() {
 
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-pink-300 via-red-200 to-pink-100 overflow-hidden">
-      
+
       {/* Confetti */}
       <div
         id="confetti-container"
@@ -31,10 +31,10 @@ export default function HvdPage() {
       />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col px-4">
+      <div className="relative z-10 flex flex-col px-4 py-6 sm:py-12 min-h-screen">
 
         {/* TOP */}
-        <div className="flex flex-col items-center pt-20 gap-4">
+        <div className="flex flex-col items-center gap-2 sm:gap-4">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-pink-700">
             YAYYYYY!!!
           </h1>
@@ -42,43 +42,43 @@ export default function HvdPage() {
           <img
             src="/stickers/cat jumping.webp"
             alt="Cat Jumping Sticker"
-            className="w-32 sm:w-36 h-auto"
+            className="w-28 sm:w-36 h-auto"
           />
         </div>
 
         {/* CENTER */}
-        <div className="flex flex-1 flex-col items-center justify-center text-center gap-2">
+        <div className="flex flex-1 flex-col items-center justify-center text-center gap-2 sm:gap-3 mt-4 sm:mt-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-pink-800">
             HAPPY VALENTINE&apos;S DAY,
           </h2>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-pink-800">
             AISHU! 
           </h2>
-          <p className="text-lg sm:text-xl text-pink-600 font-semibold mt-5">
+          <p className="text-lg sm:text-xl text-pink-600 font-semibold mt-3 sm:mt-5">
             I LOVE YOU SO MUCH, MY FOREVER VALENTINE
           </p>
-          <p className="text-md sm:text-xl text-pink-600 font-semibold mt-2">
-            I am so glad we get to spend Valentine's together, despite the distance between us.<br></br>
-            You make it feel special even from so far away. <br></br>
+          <p className="text-md sm:text-lg text-pink-600 font-semibold mt-2 sm:mt-3 max-w-md">
+            I am so glad we get to spend Valentine's together, despite the distance.<br />
+            You make it feel special even from far away.<br />
             I can't wait to spend all my future Valentine's with you :)
           </p>
           <img
             src="/stickers/happy cat heart-1.jpg"
             alt="Happy Cat Heart Sticker"
-            className="w-40 sm:w-40 h-auto mt-5"
+            className="w-36 sm:w-40 h-auto mt-4 sm:mt-5"
           />
         </div>
 
         {/* BOTTOM */}
-        <div className="pb-20 flex justify-center">
+        <div className="flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-8">
           <button
             className="
-              px-8 py-4 rounded-full
+              px-8 py-3 sm:py-4 rounded-full
               bg-gradient-to-r from-pink-600 to-red-500
-              text-white text-md font-extrabold
+              text-white text-md sm:text-lg font-extrabold
               shadow-2xl
               animate-pulse
-              hover:scale-110
+              hover:scale-105 sm:hover:scale-110
               active:scale-95
               transition-all
               relative
@@ -96,3 +96,4 @@ export default function HvdPage() {
     </main>
   );
 }
+
