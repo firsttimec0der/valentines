@@ -15,7 +15,7 @@ export default function HugsPage() {
     </h1>
 
       {/* Floating GIF container */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className="mt-12">
         <img
             src="/photos/roses.jpg"
             alt="Roses"
