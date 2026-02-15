@@ -16,8 +16,11 @@ export default function HugsPage() {
 
       {/* Floating GIF container */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="spinner"></div>
-        <p className='mt-4'>Loading...</p>
+        <img
+            src="/photos/roses.jpg"
+            alt="Roses"
+            className="w-100 h-100w-3/4 max-w-xs h-auto mx-auto"
+          />
     </div>
 
       {/* Back Button */}
